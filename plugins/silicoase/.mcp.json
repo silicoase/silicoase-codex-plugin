@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "silicoase": {
+      "type": "http",
+      "url": "https://alpha.silicoase.com/mcp"
+    }
+  }
+}
