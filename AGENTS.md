@@ -1,0 +1,3 @@
+# Silicoase Codex plugin marketplace
+
+Follow the [Silicoase beta agent workflow](https://github.com/silicoase/silicoase-strategy/blob/main/docs/beta-agent-workflow.md) and [development and release operating model](https://github.com/silicoase/silicoase-strategy/blob/main/docs/development-operating-model.md). This public repository contains only the customer-installable Codex plugin and marketplace metadata. Keep credentials, private source, customer data, and operational receipts out of it. SIL-65 owns the plugin and installation flow. Verify with the installed Codex CLI and a real isolated OAuth connection before publishing customer instructions or tagging a release.

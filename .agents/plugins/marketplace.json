@@ -1,0 +1,20 @@
+{
+  "name": "silicoase",
+  "interface": {
+    "displayName": "Silicoase"
+  },
+  "plugins": [
+    {
+      "name": "silicoase",
+      "source": {
+        "source": "local",
+        "path": "./plugins/silicoase"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
