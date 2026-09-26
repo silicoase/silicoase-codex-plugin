@@ -1,0 +1,22 @@
+{
+  "name": "silicoase",
+  "version": "0.1.1",
+  "description": "Connect Codex to the Silicoase Alpha MCP service.",
+  "author": {
+    "name": "Silicoase"
+  },
+  "interface": {
+    "displayName": "Silicoase",
+    "shortDescription": "Connect to Silicoase Alpha.",
+    "longDescription": "Access your Silicoase account and tasks through the Alpha MCP service.",
+    "developerName": "Silicoase",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://silicoase.com",
+    "defaultPrompt": "Show my Silicoase account."
+  },
+  "mcpServers": "./.mcp.json"
+}
