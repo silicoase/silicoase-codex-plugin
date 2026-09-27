@@ -4,9 +4,29 @@ This repository hosts the Silicoase Codex plugin marketplace for [SIL-65](https:
 
 ## Verification status
 
-A fresh, disposable `CODEX_HOME` with Codex CLI 0.155.1 added the public Git marketplace from `main`, installed `silicoase@silicoase`, and listed its remote HTTP MCP server at `https://alpha.silicoase.com/mcp`. The MCP auth status was `o_auth`; no OAuth sign-in or admitted account read was performed. This establishes CLI package installation only.
+A fresh, disposable `CODEX_HOME` with Codex CLI 0.155.1 added the public Git marketplace from `main`, installed `silicoase@silicoase`, and listed its remote HTTP MCP server at `https://alpha.silicoase.com/mcp`. A repeat on September 26 also refreshed the Git marketplace and reinstalled the plugin successfully. The MCP auth status was `unknown` in that fresh profile; no OAuth sign-in or admitted account read was performed. This establishes CLI package installation and refresh only.
 
-On macOS, the locally inspected ChatGPT desktop app is 26.917.71314 (build 10954), with bundled Codex CLI 0.155.0-alpha.16.4. Native app marketplace discovery, plugin installation, MCP registration, prompt-based setup, and sign-in remain untested. [OpenAI's plugin packaging docs](https://developers.openai.com/plugins/build/plugins) say a newly added local or repository marketplace appears in the desktop Plugins Directory after restarting the app. A single onboarding prompt therefore cannot be claimed to complete the app flow without a tested restart and follow-up.
+## CLI installation rehearsal
+
+These commands were checked with Codex CLI 0.155.1 in a disposable profile. They install the package, not an authenticated Silicoase connection:
+
+```sh
+codex plugin marketplace add silicoase/silicoase-codex-plugin --ref main
+codex plugin add silicoase@silicoase
+codex plugin list
+codex mcp list
+```
+
+The expected MCP entry is named `silicoase` with transport `streamable_http` and URL `https://alpha.silicoase.com/mcp`. To pull a later Git marketplace revision, refresh the marketplace and reinstall the plugin, then start a new Codex task before checking its tools:
+
+```sh
+codex plugin marketplace upgrade silicoase
+codex plugin add silicoase@silicoase
+```
+
+The marketplace currently follows `main`; it is not a tagged customer release. Check the installed version and source with `codex plugin list` before attributing any behavior to this package. Do not infer desktop installation or OAuth success from these CLI commands.
+
+On macOS, the locally inspected ChatGPT desktop app is 26.917.71314 (build 10954), with bundled Codex CLI 0.155.0-alpha.16.4. Native app marketplace discovery, plugin installation, MCP registration, prompt-based setup, and sign-in remain untested. [OpenAI's plugin packaging docs](https://developers.openai.com/plugins/build/plugins) say a newly added local or repository marketplace appears in the desktop Plugins Directory after restarting the app. A single onboarding prompt therefore cannot be claimed to complete the app flow without a tested restart and follow-up. The next desktop qualification should observe the marketplace in Plugins Directory, install `silicoase`, start a new task, inspect the actual MCP connection, and only then attempt an isolated admitted-user OAuth journey.
 
 Windows desktop behavior has not been tested for Silicoase. [OpenAI Codex issue #26693](https://github.com/openai/codex/issues/26693) is an open report of a plugin's HTTP MCP server failing to register in the Windows desktop app (reporter version 26.602.40724). It is a compatibility risk, not proof that this version of Silicoase fails on current Windows builds. No Windows fallback has been verified.
 
