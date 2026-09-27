@@ -4,7 +4,7 @@ This repository hosts the Silicoase Codex plugin marketplace for [SIL-65](https:
 
 ## Verification status
 
-A fresh, disposable `CODEX_HOME` with Codex CLI 0.155.1 added the public Git marketplace from `main`, installed `silicoase@silicoase`, and listed its remote HTTP MCP server at `https://alpha.silicoase.com/mcp`. A repeat on September 26 also refreshed the Git marketplace and reinstalled the plugin successfully. The MCP auth status was `unknown` in that fresh profile; no OAuth sign-in or admitted account read was performed. This establishes CLI package installation and refresh only.
+A fresh, disposable `CODEX_HOME` with Codex CLI 0.155.1 added the public Git marketplace from `main`, installed `silicoase@silicoase`, and listed its remote HTTP MCP server at `https://alpha.silicoase.com/mcp`. A repeat on September 26 also refreshed the Git marketplace and reinstalled the plugin successfully. The first profile reported MCP auth status `o_auth`; the repeat profile reported `unknown`. Neither completed OAuth sign-in or an admitted account read. This establishes CLI package installation and refresh only.
 
 ## CLI installation rehearsal
 
